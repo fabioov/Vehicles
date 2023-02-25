@@ -1,11 +1,11 @@
 {
     "configurations": [
         {
-            "name": "Start zfsantosvehicles",
+            "name": "Start zfsvehicles",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npx",
-            "cwd": "${workspaceFolder}/zfsantosvehicles",
+            "cwd": "${workspaceFolder}/zfsvehicles",
             "windows": {
                 "runtimeExecutable": "npx.cmd"
             },
@@ -15,7 +15,7 @@
             ],
             "args": [
                 "--open",
-                "test/flpSandbox.html#vehicleszfsantosvehicles-display"
+                "test/flpSandbox.html#vehicleszfsvehicles-display"
             ],
             "console": "internalConsole",
             "internalConsoleOptions": "openOnSessionStart",
@@ -27,10 +27,10 @@
             }
         },
         {
-            "name": "Start zfsantosvehicles Mock",
+            "name": "Start zfsvehicles Mock",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/zfsantosvehicles",
+            "cwd": "${workspaceFolder}/zfsvehicles",
             "runtimeExecutable": "npx",
             "windows": {
                 "runtimeExecutable": "npx.cmd"
@@ -43,7 +43,7 @@
                 "--config",
                 "./ui5-mock.yaml",
                 "--open",
-                "test/flpSandbox.html#vehicleszfsantosvehicles-display"
+                "test/flpSandbox.html#vehicleszfsvehicles-display"
             ],
             "console": "internalConsole",
             "internalConsoleOptions": "openOnSessionStart",
@@ -54,10 +54,10 @@
             }
         },
         {
-            "name": "Start zfsantosvehicles Local",
+            "name": "Start zfsvehicles Local",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}/zfsantosvehicles",
+            "cwd": "${workspaceFolder}/zfsvehicles",
             "runtimeExecutable": "npx",
             "windows": {
                 "runtimeExecutable": "npx.cmd"
@@ -70,7 +70,7 @@
                 "--config",
                 "./ui5-local.yaml",
                 "--open",
-                "test/flpSandbox.html#vehicleszfsantosvehicles-display"
+                "test/flpSandbox.html#vehicleszfsvehicles-display"
             ],
             "console": "internalConsole",
             "internalConsoleOptions": "openOnSessionStart",
