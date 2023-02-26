@@ -3,23 +3,104 @@
     displayBlock="true" xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-            <smartTable:SmartTable
-                id="st_monitor"
+			<IconTabBar
+			id="idIconTabBar"
+			select=".onFilterSelect"
+			class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter
+					showAll="true"
+					count="28"
+					text="Veículos"
+					key="All" />
+				<IconTabSeparator />
+				<IconTabFilter
+					icon="sap-icon://begin"
+					iconColor="Positive"
+					count="15"
+					text="Barato"
+					key="Barato" />
+				<IconTabFilter
+					icon="sap-icon://compare"
+					iconColor="Critical"
+					count="12"
+					text="Preço Médio"
+					key="Medio" />
+				<IconTabFilter
+					icon="sap-icon://inventory"
+					iconColor="Negative"
+					count="1"
+					text="Caro"
+					key="Caro" />
+			</items>
+		</IconTabBar>
+		        <!-- <smartTable:SmartTable
+                id="vehiclesTable"
                 xmlns:smartTable="sap.ui.comp.smarttable"
                 xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
                 entitySet="ZRDWCDS_VEHICLES"
                 tableType="ResponsiveTable"
-                header="{i18n>items}"
                 persistencyKey="SmartTableAnalytical_Explored"
                 class="sapUiResponsiveContentPadding"
                 app:useSmartToggle="true"
-                initiallyVisibleFields="BrandDescription,PlateId,ColorDescription,Price,Km,ModelDescription,Currency,ColorId"
+                initiallyVisibleFields="BrandDescription,,ModelDescription,Km,ColorDescription,Price,Currency"
                 showFullScreenButton="true"
 				enableAutoBinding="true"
                 busyIndicatorDelay="{listView>/delay}"
-                smartFilterId="sfb_monitor"
             >
-</smartTable:SmartTable>
+				</smartTable:SmartTable> -->
+
+				<Table id="vehiclesTable" items="{path: '/ZRDWCDS_VEHICLES'}">
+				<columns>
+				  <Column>
+					<Text text="Marca" />
+				  </Column>
+				  <Column>
+					<Text text="Modelo" />
+				  </Column>
+				  <Column>
+					<Text text="Km" />
+				  </Column>
+				  <Column>
+					<Text text="Cor" />
+				  </Column>
+				  <Column>
+					<Text text="Preço" />
+				  </Column>
+				  <Column>
+					<Text text="Moeda" />
+				  </Column>
+				  <!-- Add more columns as needed -->
+				</columns>
+				<items>
+
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier
+								text="{BrandDescription}"/>
+							 <Text
+								text="{ModelDescription}" />
+								<Text
+								text="{Km}" />
+								<Text
+								text="{ColorDescription}" />
+								<Text
+								text="{Price}" />
+								<Text
+								text="{Currency}" />
+
+							<!-- <ObjectNumber
+									number="{
+										parts:[{path:'Price'},{path:'CurrencyCode'}],
+										type: 'sap.ui.model.type.Currency',
+										formatOptions: {showMeasure: false}
+									}"
+									unit="{CurrencyCode}" /> -->
+						</cells>
+					</ColumnListItem>
+				</items>
+			  </Table>
+
         </content>
     </Page>
 </mvc:View>
