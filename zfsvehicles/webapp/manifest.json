@@ -116,6 +116,16 @@
       "type": "XML",
       "async": true,
       "id": "App"
-    }
+    },
+    "config": {
+			"sample": {
+				"files": [
+					"View1.controller.js",
+					"manifest.json",
+					"View1.view.xml",
+					"formatter.js"
+				]
+			}
+		}
   }
 }
