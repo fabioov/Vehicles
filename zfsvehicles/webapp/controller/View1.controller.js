@@ -7,7 +7,7 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend("vehicles.zfsvehicles.controller.View1", {
-      onInit: function () { },
+      onInit: function () {},
       onFilterSelect: function (oEvent) {
         var oBinding = this.byId("vehiclesTable").getBinding("items"),
           sKey = oEvent.getParameter("key"),
@@ -15,6 +15,8 @@ sap.ui.define(
           aFilters = [],
           fMedium = 400000.0,
           fExpensive = 800000.0;
+
+
 
         if (sKey === "Barato") {
           aFilters.push(
@@ -54,7 +56,6 @@ sap.ui.define(
           );
           var countCaro = aFilters.length;
         }
-
         oBinding.filter(aFilters);
 
         console.log(
@@ -67,14 +68,16 @@ sap.ui.define(
           return c.getObject();
         });
         var teste = teste1.length;
-        console.log(teste);
+        console.log("teste:", teste);
 
-        // Set the value of the `teste` variable in the model data
-        oModel.setProperty("/teste", teste);
+        var oIconTabFilter = this.getView().byId("myIconTabFilter");
+        
+        if (oIconTabFilter) {
+          oIconTabFilter.setCount(teste);
+        }
 
-        // Bind the `text` property of the `Text` control in the view to the `teste` variable in the model data
-        this.getView().byId("myTextControl").bindProperty("text", "/teste");
-      },
+      }
+    
     });
   }
 );
