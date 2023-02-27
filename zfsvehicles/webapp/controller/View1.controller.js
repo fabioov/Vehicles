@@ -7,7 +7,7 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend("vehicles.zfsvehicles.controller.View1", {
-      onInit: function () {},
+      onInit: function () { },
       onFilterSelect: function (oEvent) {
         var oBinding = this.byId("vehiclesTable").getBinding("items"),
           sKey = oEvent.getParameter("key"),
