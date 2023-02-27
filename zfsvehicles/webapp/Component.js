@@ -14,9 +14,9 @@ function (UIComponent, Device, models) {
     "use strict";
 
     return UIComponent.extend("vehicles.zfsvehicles.Component", {
-        metadata: {
-            manifest: "json",
-            config: { "fullWidth" : true }
+        metadata : {
+            manifest : "json", 
+            config:  { "fullWidth": true }
         },
 
         /**

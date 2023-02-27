@@ -10,7 +10,7 @@
 			<items>
 				<IconTabFilter
 					showAll="true"
-					count="28"
+					count="{/teste}"
 					text="Veículos"
 					key="All" />
 				<IconTabSeparator />
