@@ -1,1 +1,13 @@
 /* Enter your custom styles here */
+
+.priceMedium {
+    color: orange;
+  }
+  
+  .priceLow {
+    color: green;
+  }
+  
+  .priceHigh {
+    color: red;
+  }

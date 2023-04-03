@@ -99,6 +99,13 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "CarDetail",
+          "pattern": "vehiclesTable{PlateId}",
+          "target": [
+            "TargetCarDetail"
+          ]
         }
       ],
       "targets": {
@@ -110,6 +117,13 @@
           "viewName": "View1"
         }
       }
+    },
+    "TargetCarDetail": {
+      "viewType": "XML",
+      "transition": "slide",
+      "clearControlAggregation": false,
+      "viewId": "CarDetail",
+      "viewName": "CarDetail"
     },
     "rootView": {
       "viewName": "vehicles.zfsvehicles.view.App",
@@ -123,7 +137,7 @@
 					"View1.controller.js",
 					"manifest.json",
 					"View1.view.xml",
-					"formatter.js"
+					"model/formatter.js"
 				]
 			}
 		}

@@ -1,106 +1,43 @@
 <mvc:View controllerName="vehicles.zfsvehicles.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true" xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content>
-			<IconTabBar
-			id="idIconTabBar"
-			select=".onFilterSelect"
-			class="sapUiResponsiveContentPadding">
-			<items>
-				<IconTabFilter
-					showAll="true"
-					count="{/teste}"
-					text="Veículos"
-					key="All" />
-				<IconTabSeparator />
-				<IconTabFilter
-					icon="sap-icon://begin"
-					iconColor="Positive"
-					count="15"
-					text="Barato"
-					key="Barato" />
-				<IconTabFilter
-					icon="sap-icon://compare"
-					iconColor="Critical"
-					count="12"
-					text="Preço Médio"
-					key="Medio" />
-				<IconTabFilter
-					icon="sap-icon://inventory"
-					iconColor="Negative"
-					count="1"
-					text="Caro"
-					key="Caro" />
-			</items>
-		</IconTabBar>
-		        <!-- <smartTable:SmartTable
-                id="vehiclesTable"
-                xmlns:smartTable="sap.ui.comp.smarttable"
-                xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
-                entitySet="ZRDWCDS_VEHICLES"
-                tableType="ResponsiveTable"
-                persistencyKey="SmartTableAnalytical_Explored"
-                class="sapUiResponsiveContentPadding"
-                app:useSmartToggle="true"
-                initiallyVisibleFields="BrandDescription,,ModelDescription,Km,ColorDescription,Price,Currency"
-                showFullScreenButton="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<Page id="page" title="{i18n>title}">
+		<content>		
+		<smartTable:SmartTable
+				xmlns:smartTable="sap.ui.comp.smarttable"
+				xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+				entitySet="ZRDWCDS_VEHICLES"
+				id="vehiclesTable"
+				tableType="ResponsiveTable"
+				header="{i18n>items}"
+				persistencyKey="SmartTableAnalytical_Explored"
+				class="sapUiResponsiveContentPadding"
+				app:useSmartToggle="true"
+				initiallyVisibleFields="PlateId,BrandId,ModelId,BrandDescription,ModelDescription,ColorDescription,Price,ColorId,Currency,Km"
 				enableAutoBinding="true"
-                busyIndicatorDelay="{listView>/delay}"
-            >
-				</smartTable:SmartTable> -->
+				showFullScreenButton="true" 
+			>
 
-				<Table id="vehiclesTable" items="{path: '/ZRDWCDS_VEHICLES'}">
-				<columns>
-				  <Column>
-					<Text text="Marca" />
-				  </Column>
-				  <Column>
-					<Text text="Modelo" />
-				  </Column>
-				  <Column>
-					<Text text="Km" />
-				  </Column>
-				  <Column>
-					<Text text="Cor" />
-				  </Column>
-				  <Column>
-					<Text text="Preço" />
-				  </Column>
-				  <Column>
-					<Text text="Moeda" />
-				  </Column>
-				  <!-- Add more columns as needed -->
-				</columns>
-				<items>
+			<Table id="Table" mode="SingleSelectMaster"/>
 
-					<ColumnListItem>
-						<cells>
-							<ObjectIdentifier
-								text="{BrandDescription}"/>
-							 <Text
-								text="{ModelDescription}" />
-								<Text
-								text="{Km}" />
-								<Text
-								text="{ColorDescription}" />
-								<Text
-								text="{Price}" />
-								<Text
-								text="{Currency}" />
+			<smartTable:customToolbar>
+			<OverflowToolbar id="Overflow"> 
+			<ToolbarSpacer />
 
-							<!-- <ObjectNumber
-									number="{
-										parts:[{path:'Price'},{path:'CurrencyCode'}],
-										type: 'sap.ui.model.type.Currency',
-										formatOptions: {showMeasure: false}
-									}"
-									unit="{CurrencyCode}" /> -->
-						</cells>
-					</ColumnListItem>
-				</items>
-			  </Table>
+			<OverflowToolbarButton 
+			type="Reject"
+			icon="sap-icon://delete"
+			text="{i18n>btn_Delete}"
+			tooltip="{i18n>btn_Delete}"
+			press=".onDeleteVehicle"
+			/>
+			</OverflowToolbar>
 
-        </content>
-    </Page>
+
+			</smartTable:customToolbar>
+
+			</smartTable:SmartTable>
+			
+		</content>
+	</Page>
 </mvc:View>
